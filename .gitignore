@@ -4,4 +4,6 @@
 .settings
 gen
 bin
+*/target/
 dist
+*~
