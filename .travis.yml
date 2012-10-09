@@ -10,8 +10,13 @@ before_install:
   # only update the sdk for the tools and platform-tools (1,2) and whatever api level
   # you are building for android (run "android list sdk" to get the full list.  9 = 2.3.3 or API level 10
   - android update sdk --filter 1,2,5 --no-ui --force
+  # create AVD
+  - android create avd --name default-cli --target "Google Inc.:Google APIs:15" --skin WVGA854
   # enable GUI
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
+  # start AVD
+  - emulator -avd default-cli
+# Maven tweaks
 install: /bin/true # install is handled by Maven itself
 script: mvn clean install
