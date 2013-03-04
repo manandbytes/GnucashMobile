@@ -81,4 +81,35 @@
             <id>codinguser</id>
         </developer>
     </developers>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.jayway.android.robotium</groupId>
+                <artifactId>robotium-solo</artifactId>
+                <version>${robotium.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.android</groupId>
+                <artifactId>android</artifactId>
+                <version>${android.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.android</groupId>
+                <artifactId>android-test</artifactId>
+                <version>${android.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.gnucash.android</groupId>
+                <artifactId>gnucash-android</artifactId>
+                <type>apk</type>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.gnucash.android</groupId>
+                <artifactId>gnucash-android</artifactId>
+                <type>jar</type>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
