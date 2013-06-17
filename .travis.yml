@@ -3,7 +3,7 @@ jdk: oraclejdk7
 env:
   matrix:
     # android-16 is always included
-    - ANDROID_SDKS=sysimg-16            ANDROID_TARGET=android-16  ANDROID_ABI=x86
+    - ANDROID_SDKS=sysimg-15            ANDROID_TARGET=android-15  ANDROID_ABI=x86
 before_install:
   # Install base Android SDK
   - sudo apt-get update -qq
@@ -18,7 +18,7 @@ before_install:
   # Install required components
   # For a full list, run `android list sdk -a --extended`
   # Note that sysimg-16 downloads the ARM, x86 and MIPS images (we should optimize this)
-  - android update sdk --filter platform-tools,android-16,extra-android-support,$ANDROID_SDKS --no-ui --force > /dev/null
+  - android update sdk --filter platform-tools,extra-android-support,$ANDROID_SDKS,$ANDROID_TARGET --no-ui --force > /dev/null
 
   # create AVD
   - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
