@@ -21,7 +21,7 @@ before_install:
   - android update sdk --filter platform-tools,extra-android-support,$ANDROID_SDKS,$ANDROID_TARGET --all --no-ui --force > /dev/null
 
   # create AVD
-  - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
+  - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI --sdcard 32M
 
   # start AVD
   - emulator -avd test -no-skin -no-audio -no-window &
