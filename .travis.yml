@@ -1,9 +1,11 @@
 language: java
 jdk: oraclejdk7
 env:
+  global:
+    - ANDROID_SDKS=sysimg-16
   matrix:
-    # android-16 is always included
-    - ANDROID_SDKS=sysimg-15            ANDROID_TARGET=android-15  ANDROID_ABI=x86
+    - ANDROID_TARGET=android-15 ANDROID_ABI=x86
+
 before_install:
   # Install base Android SDK
   - sudo apt-get update -qq
