@@ -2,9 +2,10 @@ language: java
 jdk: oraclejdk7
 env:
   global:
-    - ANDROID_SDKS=sysimg-16
+    - ANDROID_TARGET=android-15
   matrix:
-    - ANDROID_TARGET=android-15 ANDROID_ABI=x86
+    - ANDROID_SDKS=sysimg-10 ANDROID_TARGET=${ANDROID_TARGET},android-8 ANDROID_ABI=armeabi
+    # - ANDROID_SDKS=sysimg-15 ANDROID_TARGET=android-15 ANDROID_ABI=x86
 
 before_install:
   # Install base Android SDK
