@@ -31,4 +31,4 @@ before_install:
   # start AVD
   - emulator -avd test -no-skin -no-audio -no-window &
 
-script: mvn verify -Dandroid.device=test
+script: mvn --file integration-tests/pom.xml verify -Dandroid.device=test
