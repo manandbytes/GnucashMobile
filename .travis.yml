@@ -7,7 +7,7 @@ env:
     - ANDROID_SDKS=sysimg-16
   matrix:
     - ANDROID_TARGET=$ANDROID_MIN_SDK      ANDROID_ABI=armeabi
-    - ANDROID_TARGET=$ANDROID_TARGET_SDK   ANDROID_ABI=x86
+    - ANDROID_TARGET=$ANDROID_TARGET_SDK   ANDROID_ABI=armeabi-v7a
 
 before_install:
   # Install base Android SDK
