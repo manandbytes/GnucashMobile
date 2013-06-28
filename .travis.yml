@@ -22,11 +22,10 @@ before_install:
 
   # List available system images with their IDs
   - android list sdk --all |grep "System Image"
-  # Install required components
-  # For a full list, run `android list sdk -a --extended`
-  # Note that sysimg-16 downloads the ARM, x86 and MIPS images (we should optimize this)
-  - echo y | android update sdk --filter $ANDROID_SDKS --all --no-ui
-  - echo yes | android update sdk --filter platform-tools,build-tools-17.0.0,extra-android-support,$ANDROID_TARGET_SDK,$ANDROID_MIN_SDK --all --no-ui --force
+  # Install required components: system image, platform and build tools etc.
+  - echo y | android update sdk --filter $ANDROID_SDKS,platform-tools,build-tools-17.0.0 --all --no-ui --force
+  # Install application-specific dependencies: minimum/target SDKs, extras, Google APIs etc.
+  - echo yes | android update sdk --filter extra-android-support,$ANDROID_TARGET_SDK,$ANDROID_MIN_SDK --all --no-ui --force
 
   # create AVD
   - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI --sdcard 32M
