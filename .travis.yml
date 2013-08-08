@@ -5,7 +5,7 @@ env:
     - ANDROID_SDK_TAR=android-sdk_r21.1-linux.tgz
     - ANDROID_MIN_SDK=android-8
     - ANDROID_TARGET_SDK=android-15
-    - ANDROID_SDKS=38 # ARM EABI v7a System Image, Android API 15, revision 2
+    - ANDROID_SDKS=sysimg-17
   matrix:
     - ANDROID_TARGET=$ANDROID_MIN_SDK      ANDROID_ABI=armeabi
     - ANDROID_TARGET=$ANDROID_TARGET_SDK   ANDROID_ABI=armeabi-v7a
